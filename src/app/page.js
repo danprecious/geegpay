@@ -4,6 +4,7 @@ import { Fahkwang } from "next/font/google";
 import { StatsData, topPlatforms } from "@/utils/reusableData";
 import Stats from "@/local-components/Stats";
 import TopPlatformBar from "@/local-components/topPlatformBar";
+import LastOrdersTable from "@/local-components/lastOrdersTable";
 
 const michroma = Fahkwang({ subsets: ["latin"], weight: "700" });
 
@@ -44,12 +45,19 @@ const Home = () => {
         </div>
       </div>
       <div className="relative md:flex mx-4">
-        <div className="md:w-[60%] bg-white rounded-lg p-3">Last orders</div>
-        <div className="lg:w-[40%] lg:mx-4 relative bg-white rounded-lg  p-3">
-          <div className="flex w-full mb-4 justify-between">
-            <p className="font-medium">Top Platform</p>
-            <p className="text-primary">See All</p>
+        <div className="md:w-[60%]  overflow-x-scroll overflow-hidden bg-white rounded-lg p-3">
+            <div className="flex justify-between">
+              <p className="font-medium text-lg">Last Orders</p>
+              <p className="font-medium text-primary bg-">See All</p>
             </div>
+            <LastOrdersTable />
+        </div>
+        <div className="md:w-[40%] lg:mx-4 relative bg-white rounded-lg  p-3">
+          <div className="flex w-full mb-4 justify-between">
+            <p className="font-medium text-lg">Top Platform</p>
+            <p className="text-primary font-medium">See All</p>
+            </div>
+            
             <div>
               {topPlatforms.map(({ title, percent, price }) => (
                 <TopPlatformBar

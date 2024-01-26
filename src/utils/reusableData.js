@@ -96,7 +96,8 @@ export const topPlatforms = [
     title: "Book Bazaar",
     price: "$2,500,000",
     percent: "15",
-    color: ""
+    color: "violet-600"
+
   },
   {
     title: "Artisan Aisle",
@@ -115,5 +116,38 @@ export const topPlatforms = [
     price: "$800,000",
     percent: "6",
     color: ""
+  },
+];
+
+export const tableData = [
+  {
+    name: "Marcus Bergson",
+    date: "Nov 15,2023",
+    amount: "80,000",
+    status: "Paid",
+  },
+  {
+    name: "Jaydon Vaccaro",
+    date: "Nov 15,2023",
+    amount: "150,000",
+    status: "Refund",
+  },
+  {
+    name: "Corey Schleifer",
+    date: "Nov 14,2023",
+    amount: "87,000",
+    status: "Paid",
+  },
+  {
+    name: "Cooper Press",
+    date: "Nov 14,2023",
+    amount: "100,000",
+    status: "Refund",
+  },
+  {
+    name: "Phillip Lubin",
+    date: "Nov 13, 2023",
+    amount: "78,000",
+    status: "Paid",
   },
 ]

@@ -16,7 +16,7 @@ const Stats = ({
   return (
     <div className="p-2 rounded-lg   bg-white">
       <div className="flex">
-        <div className="p-2 "><div className="rounded-full bg-gray-200 p-1 h-[30px] w-[30px]  overflow-hidden"><Image src={icon} className="min-h-full w-full" width={1024} height={1024}/></div></div>
+        <div className="p-2 "><div className="rounded-full bg-gray-200 p-1 h-[30px] w-[30px]  overflow-hidden"><Image alt="icon" src={icon} className="min-h-full w-full" width={1024} height={1024}/></div></div>
         <div>{chart}</div>
       </div>
       <div className="text-left">

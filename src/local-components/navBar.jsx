@@ -9,16 +9,16 @@ const NavBar = () => {
   return (
     <div className="border-b-[1px] slim-border flex items-center justify-between py-2 px-4">
       <div>Dashboard</div>
-      <div className="py-1 w-[70%] flex">
+      <div className="py-1 w-[70%] flex justify-end">
         <input
           type="search"
             className="py-2 px-5 rounded-3xl slim-border border-[1px] bg-transparent outline-gray-400 w-[35%] mx-3"
         />
-        <div className="w-[25%] mx-3">date</div>
-        <div className="w-[5%] mx-3 rounded-full slim-border border-[1px] flex justify-center items-center">
+        <div className="w-[25%] hidden lg:block mx-3">date</div>
+        <div className="w-[5%] mx-3 rounded-full hidden slim-border border-[1px] md:flex justify-center items-center">
           <Bell />
         </div>
-        <div className="w-[25%] mx-3 flex slim-border justify-center items-center border-[1px] rounded-full">
+        <div className="mx-3 flex slim-border justify-end self-end lg:justify-center items-center border-[1px] rounded-full">
           <div className="px-2">
             <div className="rounded-full overflow-hidden bg-black h-[30px] w-[30px]">
               <Image
@@ -30,11 +30,11 @@ const NavBar = () => {
               />
             </div>
           </div>
-          <p className="text-right mr-2 text-sm">
+          <p className="text-right mr-2 text-sm hidden lg:block">
             Justin Bergson{" "}
             <span className="text-gray-400 text-xs">Justin@gmail.com</span>
           </p>
-          <div>
+          <div className="hidden lg:block">
             <Arrowdown />
           </div>
         </div>
