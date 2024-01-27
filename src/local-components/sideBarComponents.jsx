@@ -3,7 +3,7 @@ import { components } from "@/utils/reusableData";
 import { StateContext } from "@/utils/context";
 import { useContext } from "react";
 import Link from "next/link";
-import Logo from "../../public/assets/vector.svg";
+
 
 import Logout from "../../public/assets/logout.svg";
 import GoIn from "../../public/assets/arrow-right.svg";
