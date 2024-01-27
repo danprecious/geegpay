@@ -1,15 +1,11 @@
 // "use client"
 import Sidebar from "@/local-components/sidebar";
 import "./globals.css";
-// import { ClerkProvider } from "@clerk/nextjs";
-import { Poppins } from "next/font/google";
 import NavBar from "@/local-components/navBar";
 import { ContextProvider } from "@/utils/context";
-import { components } from "@/utils/reusableData";
 import BottomNav from "@/local-components/bottomNav";
 import Provider from "@/utils/themeProvider";
 
-// import { ThemeProvider } from "next-themes";
 
 export const metadata = {
   title: "Geepay",

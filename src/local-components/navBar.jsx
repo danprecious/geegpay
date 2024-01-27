@@ -76,7 +76,7 @@ const NavBar = () => {
               
           </Popover.Button>
 
-          <Popover.Panel className="absolute z-10 bg-white py-5 px-3 max-w-[200px] min-w-[50vw] sm:min-w-[50vw] md:min-w-[15vw] right-0 shadow-md rounded-md">
+          <Popover.Panel className="absolute z-10 bg-white dark:bg-gray-700 py-5 px-3 max-w-[200px] min-w-[50vw] sm:min-w-[50vw] md:min-w-[15vw] right-0 shadow-md rounded-md">
             <div className="grid">
               <Link className="py-2" href="/" >Settings</Link>
               <Link className="py-2" href="/" >Notifications</Link>
