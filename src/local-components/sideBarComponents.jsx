@@ -4,14 +4,17 @@ import { StateContext } from "@/utils/context";
 import { useContext } from "react";
 import Link from "next/link";
 import Logo from "../../public/assets/vector.svg";
-import Light from "../../public/assets/brightness.svg";
-import Dark from "../../public/assets/moon.svg";
+
 import Logout from "../../public/assets/logout.svg";
 import GoIn from "../../public/assets/arrow-right.svg";
 import Setting from "../../public/assets/setting-2.svg";
+import { usePathname } from "next/navigation";
+import ThemeToggler from "./themeToggler";
 
 export const SidebarComponents = () => {
   const { titleState, setTitleState } = useContext(StateContext);
+
+  const path = usePathname();
 
   const handleHoverState = () => {};
 
@@ -25,8 +28,8 @@ export const SidebarComponents = () => {
           {components.map((icon) => (
             <Link
               key={icon.id}
-              href={icon.href}
-              className={`flex items-center w-full px-6 py-3 ${
+              href={icon.href} 
+              className={`flex ${path === icon.href ? "active" : ''} items-center w-full px-6 py-3 border-solid ${
                 titleState ? "" : ""
               }`}
               onMouseEnter={() => setTitleState(true)}
@@ -38,14 +41,7 @@ export const SidebarComponents = () => {
             </Link>
           ))}
         </div>
-        <div className="flex justify-start mt-2 ml-4">
-          <div className="flex flex-col items-center bg-white px-1 relative py-2 rounded-full">
-            <div className="bg-primary p-1 mb-1  rounded-full">
-              <Light fill={"primary"} />
-            </div>
-            <Dark />
-          </div>
-        </div>
+        <ThemeToggler />
       </div>
       <div className="flex flex-col ml-4 mt-[6em] justify-self-end">
         <div className="p-2">

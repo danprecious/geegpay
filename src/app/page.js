@@ -3,17 +3,19 @@ import Link from "next/link";
 import { Fahkwang } from "next/font/google";
 import { StatsData, topPlatforms } from "@/utils/reusableData";
 import Stats from "@/local-components/Stats";
-import TopPlatformBar from "@/local-components/topPlatformBar";
+import TopPlatformBar, { TopPlatFormContainer } from "@/local-components/topPlatformBar";
 import LastOrdersTable from "@/local-components/lastOrdersTable";
+import BarGraph from "@/local-components/barGraph";
 
 const michroma = Fahkwang({ subsets: ["latin"], weight: "700" });
 
+
 const Home = () => {
   return (
-    <div className="flex relative flex-col h-[90vh] overflow-y-scroll">
-      <div className="lg:h-[50%] relative sm:flex-col lg:flex-row flex m-4 slim-border border-[1px]">
-        <div className="lg:w-[60%] p-3 bg-white rounded-lg hidden md:flex">
-          barchart
+    <div className="flex flex-col">
+      <div className="lg:h-[50%] relative sm:flex-col lg:flex-row flex m-4">
+        <div className="lg:w-[60%] p-3 bg-white dark:bg-gray-700 rounded-lg hidden md:flex">
+          <BarGraph />
         </div>
         <div className="lg:mx-3 p-2 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full  lg:w-[40%]">
           {StatsData.map(
@@ -24,7 +26,9 @@ const Home = () => {
               figure,
               trendFigure,
               trendColor,
+              shade,
               trendText,
+              trendIcon
             }) => {
               // console.log(iconUrl);
 
@@ -38,6 +42,8 @@ const Home = () => {
                   trendFigure={trendFigure}
                   trendColor={trendColor}
                   trendText={trendText}
+                  shades={shade}
+                  trendIcon={trendIcon}
                 />
               );
             }
@@ -45,33 +51,18 @@ const Home = () => {
         </div>
       </div>
       <div className="relative md:flex mx-4">
-        <div className="md:w-[60%]  overflow-x-scroll overflow-hidden bg-white rounded-lg p-3">
-            <div className="flex justify-between">
+        <div className="md:w-[60%]  overflow-x-scroll overflow-hidden bg-white dark:bg-gray-700 rounded-lg p-3">
+            <div className="flex justify-between px-3">
               <p className="font-medium text-lg">Last Orders</p>
               <p className="font-medium text-primary bg-">See All</p>
             </div>
             <LastOrdersTable />
         </div>
-        <div className="md:w-[40%] lg:mx-4 relative bg-white rounded-lg  p-3">
-          <div className="flex w-full mb-4 justify-between">
-            <p className="font-medium text-lg">Top Platform</p>
-            <p className="text-primary font-medium">See All</p>
-            </div>
-            
-            <div>
-              {topPlatforms.map(({ title, percent, price }) => (
-                <TopPlatformBar
-                  key={title}
-                  title={title}
-                  price={price}
-                  percent={percent}
-                />
-              ))}
-            </div>
-        </div>
+        <TopPlatFormContainer />
       </div>
     </div>
   );
 };
 
 export default Home;
+

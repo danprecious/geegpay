@@ -4,6 +4,7 @@
 
 *{
   /* border: 1px solid black; */
+  @apply transition-all;
   /* @apply border; */
 }
 
@@ -11,27 +12,15 @@
  display: none;
  color: #fdfdfd;
  color: rgb(90, 190, 150);
- color: rgb(162, 241, 210);
+ color: rgb(232, 255, 246);
  color: rgb(255, 175, 182);
+ background: linear-gradient(to bottom, rgb(162, 241, 210),rgb(90, 190, 150))
  /* color: ; */
 }
 
-progress{
-  height: 20px;
-}
-
-progress::-webkit-progress-bar{
-  background-color: rgb(231, 231, 231);
-  border-radius: 5px;
-}
-
-progress::-webkit-progress-value{
-  background-color: rgb(218, 111, 111);
-  border-radius: 5px;
-}
 
 .slim-border{
-  @apply border-solid border-gray-200;
+  @apply border-solid border-gray-200 dark:border-gray-500;
 }
 
 .test{

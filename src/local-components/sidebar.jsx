@@ -9,7 +9,7 @@ const Sidebar = () => {
 
 
   return (
-    <div className={`${titleState ? "fixed" : ""} flex flex-col sidebar items-center z-50 bg-bg h-full slim-border border-r-[1px]`}>
+    <div className={`${titleState ? "fixed" : ""} flex flex-col sidebar items-center z-50 bg-bg dark:bg-gray-800 min-h-[100vh] slim-border border-r-[1px]`}>
       <SidebarComponents />
     </div>
   );
